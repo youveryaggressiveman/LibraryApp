@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    
+    <ApplicationIcon>free-icon-books-4334726.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Images\Logotype.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="View\Pages\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ReactiveUI" Version="16.4.15" />
+    <PackageReference Include="ReactiveUI.WPF" Version="16.4.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Images\Logotype.png" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>LibraryApp</id>
+    <version>1.0.0</version>
+    <authors>LibraryApp</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net5.0-windows7.0" />
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net5.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WPF" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\повелитель\Desktop\GG PROGRAMIST\All_project_c#\LibraryApp\LibraryApp\bin\Debug\net5.0-windows\LibraryApp.runtimeconfig.json" target="lib\net5.0-windows7.0\LibraryApp.runtimeconfig.json" />
+    <file src="C:\Users\повелитель\Desktop\GG PROGRAMIST\All_project_c#\LibraryApp\LibraryApp\bin\Debug\net5.0-windows\LibraryApp.dll" target="lib\net5.0-windows7.0\LibraryApp.dll" />
+  </files>
+</package>

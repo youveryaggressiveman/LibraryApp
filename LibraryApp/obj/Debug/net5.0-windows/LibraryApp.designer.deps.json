@@ -1,0 +1,98 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "DynamicData/7.4.3": {
+        "dependencies": {
+          "System.Reactive": "5.0.0"
+        },
+        "runtime": {
+          "lib/net5.0/DynamicData.dll": {
+            "assemblyVersion": "7.4.0.0",
+            "fileVersion": "7.4.3.26197"
+          }
+        }
+      },
+      "ReactiveUI/16.4.15": {
+        "dependencies": {
+          "DynamicData": "7.4.3",
+          "Splat": "13.1.63"
+        },
+        "runtime": {
+          "lib/net5.0/ReactiveUI.dll": {
+            "assemblyVersion": "16.4.0.0",
+            "fileVersion": "16.4.15.63491"
+          }
+        }
+      },
+      "ReactiveUI.WPF/16.4.15": {
+        "dependencies": {
+          "ReactiveUI": "16.4.15"
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/ReactiveUI.Wpf.dll": {
+            "assemblyVersion": "16.4.0.0",
+            "fileVersion": "16.4.15.63491"
+          }
+        }
+      },
+      "Splat/13.1.63": {
+        "runtime": {
+          "lib/net5.0/Splat.dll": {
+            "assemblyVersion": "13.1.0.0",
+            "fileVersion": "13.1.63.25476"
+          }
+        }
+      },
+      "System.Reactive/5.0.0": {
+        "runtime": {
+          "lib/net5.0/System.Reactive.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.1"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DynamicData/7.4.3": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7eGyREbtzyaRutMa+iToi2e41JboEVK9c1ZBcTvJOfEoTRIZX3hChIsxIvV0ErzMXtGHAIS2O0I8jLDUIds5wg==",
+      "path": "dynamicdata/7.4.3",
+      "hashPath": "dynamicdata.7.4.3.nupkg.sha512"
+    },
+    "ReactiveUI/16.4.15": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-i5X3jdaq2b/wOOpM3Ebq1YHIoQwusquEQjcBTe1Lll/P/ccVDYkFVMZKxZaZlhz2UXGfBv1w5JZYNIon9pvFeQ==",
+      "path": "reactiveui/16.4.15",
+      "hashPath": "reactiveui.16.4.15.nupkg.sha512"
+    },
+    "ReactiveUI.WPF/16.4.15": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Iiq1qqpK6KE/crZ/BXFW2BM4wyRFcBtbDy1qzdkOCUPgtiI/bfpq3+5AZhNkV8FYzX/c5er1d9oQ13bZ4oQxxQ==",
+      "path": "reactiveui.wpf/16.4.15",
+      "hashPath": "reactiveui.wpf.16.4.15.nupkg.sha512"
+    },
+    "Splat/13.1.63": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-7iW45RA7AbSlQPCgdokmysva5PGd6iBUhuNkC0XD73LF9dxfTkKeo3wZkohU7nvspDhJ7PJsYHvDtxIt5bMQ8Q==",
+      "path": "splat/13.1.63",
+      "hashPath": "splat.13.1.63.nupkg.sha512"
+    },
+    "System.Reactive/5.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-erBZjkQHWL9jpasCE/0qKAryzVBJFxGHVBAvgRN1bzM0q2s1S4oYREEEL0Vb+1kA/6BKb5FjUZMp5VXmy+gzkQ==",
+      "path": "system.reactive/5.0.0",
+      "hashPath": "system.reactive.5.0.0.nupkg.sha512"
+    }
+  }
+}
