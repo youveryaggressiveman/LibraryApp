@@ -6,89 +6,14 @@
         xmlns:local="clr-namespace:LibraryApp.View.Windows"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        WindowStyle="None"
         WindowStartupLocation="CenterScreen"
         Foreground="#292929"
-        Title="Библиотека: Авторизация" Height="450" Width="500"
+        Background="WhiteSmoke"
+        Name="_this"
+        Title="Библиотека: Авторизация" Height="600" Width="500"
         FontFamily="Rubik">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
-        
-        <StackPanel HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    Orientation="Horizontal">
-                <Image Source="../../Assets/Images/Logotype.png"
-                       Width="50"
-                       Margin=" 0 0 10 0"/>
-                <TextBlock Text="Авторизация"
-                           FontSize="30"
-                           HorizontalAlignment="Left"
-                           VerticalAlignment="Center"/>
-        </StackPanel>
-        <Grid Grid.Row="1">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
-            </Grid.RowDefinitions>
-            <StackPanel HorizontalAlignment="Left"
-                        Margin="0 30 0 20"
-                        VerticalAlignment="Center"
-                        Orientation="Horizontal">
-                <TextBlock Text="Введите логин:"
-                           FontSize="20"
-                           Margin="20 0 30 0"/>
-                <TextBox Width="250"
-                         FontSize="18"
-                         Name="loginTextBox"
-                          Cursor="IBeam" />
-            </StackPanel>
-            <StackPanel HorizontalAlignment="Left"
-                        Margin="0 20 0 50"
-                        VerticalAlignment="Center"
-                        Grid.Row="1"
-                        Orientation="Horizontal">
-                <TextBlock Text="Введите пароль:"
-                           FontSize="20"
-                           Margin="20 0 17.3 0" />
-                <PasswordBox Width="250"
-                             FontSize="18"
-                             Name="pswBox"/>
-            </StackPanel>
-        </Grid>
-        <Grid Row="2">
-            <Grid.RowDefinitions>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition />
-            </Grid.RowDefinitions>
-            <Button
-                Height="40"
-                Name="authButton"
-                HorizontalContentAlignment="Center"
-                VerticalContentAlignment="Center"
-                Content="Авторизоваться"
-                FontSize="18"
-                    Width="250"/>
-            <Button Grid.Row="1"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    Content="Выйти"
-                    FontSize="18"
-                    Height="40"
-                    Width="250"/>
-            <TextBlock Grid.Row="2"
-                       HorizontalAlignment="Center"
-                       VerticalAlignment="Center"
-                       FontSize="20">
-                Войти как 
-                <Hyperlink>гость</Hyperlink>
-                ?
-            </TextBlock>
-        </Grid>
+        <Frame Name="loginFrame"
+               NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>

@@ -1,15 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "t9LWNoZ++VCh/8uVFYPV/s3GdFH8Tdl2cDPQMus6sG1qw7P/qzz2J7PA/0PJirVlKTdL32O4z+mJ76WchysGkQ==",
+  "dgSpecHash": "gtxV1cvj2d7gq2RF5f1SnxlWoT9EHw2BD+UXbN4VSV0/V0xJTTTitMC3TZZBMUeuX8QRitJqXiThQz7SpsN6vw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\повелитель\\Desktop\\GG PROGRAMIST\\All_project_c#\\LibraryApp\\LibraryApp\\LibraryApp.csproj",
+  "projectFilePath": "C:\\Users\\повелитель\\Desktop\\GG PROGRAMIST\\LibraryAll\\LibraryApp\\LibraryApp\\LibraryApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\повелитель\\.nuget\\packages\\dynamicdata\\7.4.3\\dynamicdata.7.4.3.nupkg.sha512",
     "C:\\Users\\повелитель\\.nuget\\packages\\reactiveui\\16.4.15\\reactiveui.16.4.15.nupkg.sha512",
     "C:\\Users\\повелитель\\.nuget\\packages\\reactiveui.wpf\\16.4.15\\reactiveui.wpf.16.4.15.nupkg.sha512",
     "C:\\Users\\повелитель\\.nuget\\packages\\splat\\13.1.63\\splat.13.1.63.nupkg.sha512",
-    "C:\\Users\\повелитель\\.nuget\\packages\\system.reactive\\5.0.0\\system.reactive.5.0.0.nupkg.sha512",
-    "C:\\Users\\повелитель\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.16\\microsoft.netcore.app.host.win-x64.5.0.16.nupkg.sha512"
+    "C:\\Users\\повелитель\\.nuget\\packages\\system.reactive\\5.0.0\\system.reactive.5.0.0.nupkg.sha512"
   ],
   "logs": []
 }

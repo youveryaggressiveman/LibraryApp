@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="View\Pages\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="ReactiveUI" Version="16.4.15" />
     <PackageReference Include="ReactiveUI.WPF" Version="16.4.15" />
   </ItemGroup>

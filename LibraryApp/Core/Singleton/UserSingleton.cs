@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using LibraryApp.Model;
 
-namespace LibraryApp.Core
+namespace LibraryApp.Core.Singleton
 {
     public static class UserSingleton
     {

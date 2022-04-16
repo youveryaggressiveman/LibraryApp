@@ -7,8 +7,12 @@ using System.Reactive.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using LibraryApp.Controllers;
+using LibraryApp.Core;
 using LibraryApp.Core.Helper;
+using LibraryApp.Core.Singleton;
 using LibraryApp.Model;
+using LibraryApp.Model.DataVIewModel;
 using LibraryApp.View.Windows;
 using ReactiveUI;
 
@@ -16,6 +20,7 @@ namespace LibraryApp.ViewModel
 {
     public class AuthViewModel : ReactiveObject
     {
+        private readonly AuthController _controller;
         private readonly AuthHelper _authHelper;
 
         private string _login;
@@ -37,14 +42,35 @@ namespace LibraryApp.ViewModel
             set => this.RaiseAndSetIfChanged(ref _password, value, nameof(Password));
         }
 
+        public ReactiveCommand<Unit, Unit> OpenRegistration { get; }
         public ReactiveCommand<Unit, Unit> AuthCommand { get; }
 
         public AuthViewModel()
         {
             _authHelper = new AuthHelper();
+            _controller = new AuthController();
 
+            OpenRegistration = ReactiveCommand
+                .CreateFromObservable(ExecuteOpenWindow);
             AuthCommand = ReactiveCommand
                 .CreateFromObservable(ExecuteAuth);
+
+        }
+
+        private IObservable<Unit> ExecuteOpenWindow()
+        {
+            RegistrationWindow registrationWindow = new RegistrationWindow();
+            registrationWindow.Show();
+
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window is AuthWindow)
+                {
+                    window.Close();
+                }
+            }
+
+            return Observable.Return(Unit.Default);
         }
 
         private void RouteEvent(List<LoadAll> action)
@@ -72,20 +98,40 @@ namespace LibraryApp.ViewModel
 
             if (Validator.TryValidateObject(user, context, results, true))
             {
-                if (await _authHelper.AuthHelp(Login, Password))
+                if (await _authHelper.AuthHelp(user))
                 {
-                    if (true)
+                    if (UserSingleton.User.RoleOfUsers.Count == 1)
                     {
-                        MainWindow mainWindow = new MainWindow();
-                        mainWindow.Show();
-
-                        foreach (Window window in Application.Current.Windows)
+                        try
                         {
-                            if (window is AuthWindow)
+                            if (await  _controller.Authorize(new AuthorizeUser()
+                                    { Login = "admin", Password = "admin", RoleID = 1 }))
                             {
-                                window.Close();
+                                UserSingleton.User = null;
+
+                                MainWindow mainWindow = new MainWindow();
+                                mainWindow.Show();
+
+                                foreach (Window window in Application.Current.Windows)
+                                {
+                                    if (window is AuthWindow)
+                                    {
+                                        window.Close();
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Произошла ошибка при авторизации, повторите попытку позже.", "Ошибка",
+                                    MessageBoxButton.OK, MessageBoxImage.Error);
                             }
                         }
+                        catch (Exception e)
+                        {
+                            MessageBox.Show("Произошла ошибка подключения.", "Ошибка",
+                                MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                        
                     }
                     //Будет работать при наличии нескольких ролей у пользователя
                     else

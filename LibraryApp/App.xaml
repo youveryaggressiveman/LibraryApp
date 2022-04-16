@@ -4,10 +4,12 @@
              xmlns:local="clr-namespace:LibraryApp"
              StartupUri="View/Windows/AuthWindow.xaml">
     <Application.Resources>
-         <ResourceDictionary>
-             <ResourceDictionary.MergedDictionaries>
-                 <ResourceDictionary Source="Assets/Styles/GlobalStyle.xaml"/>
-             </ResourceDictionary.MergedDictionaries>
-         </ResourceDictionary>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Assets/Styles/GlobalStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
+        
     </Application.Resources>
 </Application>

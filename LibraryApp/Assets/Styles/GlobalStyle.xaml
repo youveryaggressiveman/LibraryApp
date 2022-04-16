@@ -3,7 +3,7 @@
     <!--Блок для кнопок приложения-->
     <Style TargetType="Button">
         <Setter Property="Background"
-                Value="#BF8730"/>
+                Value="#4169e1"/>
         <Setter Property ="Margin"
                 Value="15"/>
         <Setter Property="BorderBrush"
@@ -22,6 +22,18 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver"
+                     Value="True">
+                <Setter Property="Background"
+                        Value="#FF7EB4EA"/>
+            </Trigger>
+            <Trigger Property="IsPressed"
+                     Value="True">
+                <Setter Property="Background"
+                        Value="#FF569DE5"/>
+            </Trigger>
+        </Style.Triggers>
     </Style>
 
     <!--Блок для TextBox-->
@@ -103,59 +115,165 @@
         
     </Style>
 
-    <!--Блок для PasswordBox-->
-    <Style TargetType="PasswordBox">
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate 
-                                 TargetType="{x:Type PasswordBox}">
-                    <Border x:Name="Border"
-                            CornerRadius="4"
-                            BorderThickness="1">
-                        <Border.BorderBrush>
-                            <SolidColorBrush x:Name="BorderColor"
-                                             Color="#C0C0C0" />
-                        </Border.BorderBrush>
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup x:Name="CommonStates">
-                                <VisualState x:Name="Normal" />
-                                <VisualState x:Name="Disabled" />
-                                <VisualState x:Name="MouseOver">
-                                    <Storyboard>
-                                        <ColorAnimation Storyboard.TargetName="BorderColor"
-                                                        Storyboard.TargetProperty="Color"
-                                                        To="#4bb1e0"
-                                                        Duration="0" />
-                                    </Storyboard>
-                                </VisualState>
-                                <VisualState x:Name="Focused">
-                                    <Storyboard>
-                                        <ColorAnimation Storyboard.TargetName="BorderColor"
-                                                        Storyboard.TargetProperty="Color"
-                                                        To="#4bb1e0"
-                                                        Duration="0" />
-                                    </Storyboard>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-                        <ScrollViewer x:Name="PART_ContentHost" />
-                    </Border>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
+    <!-- Блок для поля логина авторизации-->
+    <Style TargetType="TextBlock"
+           x:Key="TxTtitleStyle">
+        <Setter Property="HorizontalAlignment"
+                Value="Left"/>
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+        <Setter Property="Foreground"
+                Value="#a3a3a4" />
+        <Setter Property="FontSize"
+                Value="20" />
         <Setter Property="Padding"
-                Value="3 0 0 0" />
+                Value="2 0" />
         <Style.Triggers>
-            <Trigger Property="IsFocused"
-                     Value="True">
-                <Setter Property="BorderBrush"
-                        Value="#BF8730" />
-            </Trigger>
-            <Trigger Property="IsMouseOver"
-                     Value="True">
-                <Setter Property="BorderBrush"
-                        Value="#BF8730" />
-            </Trigger>
+            <DataTrigger Binding="{Binding Text, ElementName=loginTextBox}"
+                         Value="">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard SpeedRatio="10">
+                            <DoubleAnimation Storyboard.TargetProperty="FontSize"
+                                             To="20" />
+                            <ThicknessAnimation Storyboard.TargetProperty="Margin"
+                                                To="0" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+
+                <DataTrigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard SpeedRatio="10">
+                            <DoubleAnimation Storyboard.TargetProperty="FontSize"
+                                             To="15" />
+                            <ThicknessAnimation Storyboard.TargetProperty="Margin"
+                                                To="0 0 0 30" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <Style TargetType="TextBox"
+           x:Key="TxTStyle">
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+        <Setter Property="Foreground"
+                Value="#292929" />
+        <Setter Property="TextAlignment"
+                Value="Left" />
+        <Setter Property="FontWeight"
+                Value="SemiBold" />
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="BorderThickness"
+                Value="0" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding FontSize, ElementName=titleTextBox}"
+                         Value="15">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard SpeedRatio="10">
+                            <DoubleAnimation Storyboard.TargetProperty="FontSize"
+                                             To="20" />
+                            <ThicknessAnimation Storyboard.TargetProperty="Margin"
+                                                To="0 20 1 1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+
+                <DataTrigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard SpeedRatio="10">
+                            <DoubleAnimation Storyboard.TargetProperty="FontSize"
+                                             To="15" />
+                            <ThicknessAnimation Storyboard.TargetProperty="Margin"
+                                                To="0" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--Блок для пароля авторизации -->
+    <Style TargetType="TextBlock"
+           x:Key="titlePasswordBoxStyle">
+        <Setter Property="HorizontalAlignment"
+                Value="Left" />
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+        <Setter Property="Foreground"
+                Value="#a3a3a4" />
+        <Setter Property="FontSize"
+                Value="20" />
+        <Setter Property="Padding"
+                Value="2 0" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Password, ElementName=passwordTextBox}"
+                         Value="">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard SpeedRatio="10">
+                            <DoubleAnimation Storyboard.TargetProperty="FontSize"
+                                             To="20" />
+                            <ThicknessAnimation Storyboard.TargetProperty="Margin"
+                                                To="0" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+
+                <DataTrigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard SpeedRatio="10">
+                            <DoubleAnimation Storyboard.TargetProperty="FontSize"
+                                             To="15" />
+                            <ThicknessAnimation Storyboard.TargetProperty="Margin"
+                                                To="0 0 0 30" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <Style TargetType="PasswordBox"
+           x:Key="PasswordBoxStyle">
+        <Setter Property="VerticalAlignment"
+                Value="Center" />
+        <Setter Property="Foreground"
+                Value="#292929" />
+        <Setter Property="FontWeight"
+                Value="SemiBold" />
+        <Setter Property="Background"
+                Value="Transparent" />
+        <Setter Property="BorderThickness"
+                Value="0" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding FontSize, ElementName=titlePasswordBox}"
+                         Value="15">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard>
+                        <Storyboard SpeedRatio="10">
+                            <DoubleAnimation Storyboard.TargetProperty="FontSize"
+                                             To="20" />
+                            <ThicknessAnimation Storyboard.TargetProperty="Margin"
+                                                To="0 20 1 1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+
+                <DataTrigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard SpeedRatio="10">
+                            <DoubleAnimation Storyboard.TargetProperty="FontSize"
+                                             To="15" />
+                            <ThicknessAnimation Storyboard.TargetProperty="Margin"
+                                                To="0" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.ExitActions>
+            </DataTrigger>
         </Style.Triggers>
     </Style>
 </ResourceDictionary>

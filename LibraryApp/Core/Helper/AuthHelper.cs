@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LibraryApp.Controllers;
+using LibraryApp.Core.Singleton;
+using LibraryApp.Model;
 using LibraryApp.View.Windows;
 
 namespace LibraryApp.Core.Helper
@@ -17,18 +19,18 @@ namespace LibraryApp.Core.Helper
             _controller = new AuthController();
         }
 
-        public async Task<bool> AuthHelp(string login, string password)
+        public async Task<bool> AuthHelp(User user)
         {
             try
             {
-                var user = await _controller.GetUserByLoginAndPassword(login, password);
+                var verifiedUser = await _controller.GetUserByLoginAndPassword(user);
 
                 if (user == null)
                 {
                     return false;
                 }
 
-                if (user.Login == login && user.Password == password)
+                if (verifiedUser.Login == user.Login && verifiedUser.Password == user.Password)
                 {
                     UserSingleton.User = user;
 

@@ -31,7 +31,7 @@ namespace LibraryApp.ViewModel
 
         public MainViewModel()
         {
-            ThisUser = UserSingleton.User;
+            //ThisUser = UserSingleton.User;
 
             _fullName = this
                 .WhenAnyValue(x => x.ThisUser.SecondName + " " + x.ThisUser.FirstName + "."

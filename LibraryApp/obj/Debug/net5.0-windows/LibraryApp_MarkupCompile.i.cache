@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\повелитель\Desktop\GG PROGRAMIST\All_project_c#\LibraryApp\LibraryApp\obj\Debug\net5.0-windows\
+C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\obj\Debug\net5.0-windows\
 LibraryApp
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-C:\Users\повелитель\Desktop\GG PROGRAMIST\All_project_c#\LibraryApp\LibraryApp\App.xaml
-4-1057917373
+C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\App.xaml
+61028959102
 
-15-1857734583
+351823470691
 198-1282202342
-Assets\Styles\GlobalStyle.xaml;View\Windows\AuthWindow.xaml;View\Windows\MainWindow.xaml;View\Windows\SelectRoleWindow.xaml;
+Assets\Styles\GlobalStyle.xaml;View\Pages\LoginPage.xaml;View\Windows\AuthWindow.xaml;View\Windows\MainWindow.xaml;View\Windows\RegistrationWindow.xaml;View\Windows\SelectRoleWindow.xaml;
 
 False
 

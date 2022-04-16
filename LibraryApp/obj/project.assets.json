@@ -226,11 +226,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\повелитель\\Desktop\\GG PROGRAMIST\\All_project_c#\\LibraryApp\\LibraryApp\\LibraryApp.csproj",
+      "projectUniqueName": "C:\\Users\\повелитель\\Desktop\\GG PROGRAMIST\\LibraryAll\\LibraryApp\\LibraryApp\\LibraryApp.csproj",
       "projectName": "LibraryApp",
-      "projectPath": "C:\\Users\\повелитель\\Desktop\\GG PROGRAMIST\\All_project_c#\\LibraryApp\\LibraryApp\\LibraryApp.csproj",
+      "projectPath": "C:\\Users\\повелитель\\Desktop\\GG PROGRAMIST\\LibraryAll\\LibraryApp\\LibraryApp\\LibraryApp.csproj",
       "packagesPath": "C:\\Users\\повелитель\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\повелитель\\Desktop\\GG PROGRAMIST\\All_project_c#\\LibraryApp\\LibraryApp\\obj\\",
+      "outputPath": "C:\\Users\\повелитель\\Desktop\\GG PROGRAMIST\\LibraryAll\\LibraryApp\\LibraryApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\повелитель\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -278,12 +278,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.16, 5.0.16]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
