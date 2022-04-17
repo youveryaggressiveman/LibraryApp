@@ -5,8 +5,10 @@ using System.Linq;
 using System.Reactive;
 using System.Reactive.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Threading;
 using LibraryApp.Controllers;
 using LibraryApp.Core;
 using LibraryApp.Core.Helper;
@@ -27,7 +29,6 @@ namespace LibraryApp.ViewModel
         private string _password;
 
         public delegate void LoadAll();
-
         public event LoadAll Load;
 
         public string Login
@@ -54,7 +55,6 @@ namespace LibraryApp.ViewModel
                 .CreateFromObservable(ExecuteOpenWindow);
             AuthCommand = ReactiveCommand
                 .CreateFromObservable(ExecuteAuth);
-
         }
 
         private IObservable<Unit> ExecuteOpenWindow()
@@ -107,10 +107,10 @@ namespace LibraryApp.ViewModel
                             if (await  _controller.Authorize(new AuthorizeUser()
                                     { Login = "admin", Password = "admin", RoleID = 1 }))
                             {
-                                UserSingleton.User = null;
-
-                                MainWindow mainWindow = new MainWindow();
+                                MainWindow mainWindow = new MainWindow(user.RoleOfUsers.First(x=>x.UserId == UserSingleton.User.Id).Role.Value);
                                 mainWindow.Show();
+
+                                UserSingleton.User = null;
 
                                 foreach (Window window in Application.Current.Windows)
                                 {
@@ -136,8 +136,23 @@ namespace LibraryApp.ViewModel
                     //Будет работать при наличии нескольких ролей у пользователя
                     else
                     {
-                        SelectRoleWindow selectRoleWindow = new SelectRoleWindow();
+                        var roleList = new List<Role>();
+
+                        foreach (var item in user.RoleOfUsers)
+                        {
+                            roleList.Add(item.Role);
+                        }
+
+                        SelectRoleWindow selectRoleWindow = new SelectRoleWindow(roleList);
                         selectRoleWindow.ShowDialog();
+
+                        foreach (Window window in Application.Current.Windows)
+                        {
+                            if (window is AuthWindow)
+                            {
+                                window.Close();
+                            }
+                        }
                     }
                 }
                 else

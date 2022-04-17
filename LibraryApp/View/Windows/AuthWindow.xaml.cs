@@ -31,14 +31,6 @@ namespace LibraryApp.View.Windows
 
             FrameMangaer.MainFrame = loginFrame;
             FrameMangaer.SetSource(new LoginPage());
-
-            //this.WhenActivated(disposable =>
-            //{
-            //    this.Bind(this.ViewModel, user => user.Login, user =>user.loginFrame)
-            //        .DisposeWith(disposable);
-            //    this.BindCommand(this.ViewModel, command => command.AuthCommand, command => command.authButton)
-            //        .DisposeWith(disposable);
-            //});
         }
     }
 }

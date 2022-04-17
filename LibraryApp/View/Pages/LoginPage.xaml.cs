@@ -25,12 +25,12 @@ namespace LibraryApp.View.Pages
     public partial class LoginPage : Page, IViewFor<AuthViewModel>
     {
         public static readonly DependencyProperty AuthViewModelProperty =
-            DependencyProperty.Register(nameof(ViewModel), typeof(AuthViewModel), typeof(AuthWindow));
+            DependencyProperty.Register(nameof(ViewModel), typeof(AuthViewModel), typeof(LoginPage));
 
         public LoginPage()
         {
             InitializeComponent();
-
+            
             this.WhenActivated(disposable =>
             {
                 this.Bind(this.ViewModel, user => user.Login, user => user.loginTextBox.Text)

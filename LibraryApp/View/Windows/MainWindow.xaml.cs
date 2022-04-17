@@ -25,11 +25,11 @@ namespace LibraryApp
         public static readonly DependencyProperty MainViewModelProperty =
             DependencyProperty.Register(nameof(ViewModel), typeof(MainViewModel), typeof(MainWindow));
 
-        public MainWindow()
+        public MainWindow(string roleName)
         {
             InitializeComponent();
 
-            ViewModel = new MainViewModel();
+            ViewModel = new MainViewModel(roleName);
 
             this.WhenActivated(disposable =>
             {

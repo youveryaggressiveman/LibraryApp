@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryApp.View.Windows"
         mc:Ignorable="d"
-        Title="SelectRoleWindow" Height="450" Width="800">
+        WindowStartupLocation="CenterOwner"
+        Title="Диалоговое окно: Выбор роли для дальнейшей работы" Height="450" Width="450">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+            <Image Source="../../Assets/Images/Logotype.png"
+                   Width="50"
+                   Margin=" 0 0 10 0" />
+            <TextBlock Text="Выбор роли"
+                       FontSize="30"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center" />
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Center"
+                    Grid.Row="1"
+                    Orientation="Vertical"
+                    VerticalAlignment="Center">
+            <Button Content="Войти как клиент"
+                    Name="clientButton"/>
+            <Button Content="Войти как сотрудник"
+                    Name="employeeButton"/>
+            <Button Content="Войти как администратор" 
+                    Name="adminButton"/>
+        </StackPanel>
     </Grid>
 </Window>
