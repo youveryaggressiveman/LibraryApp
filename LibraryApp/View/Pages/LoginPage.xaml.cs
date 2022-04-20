@@ -30,16 +30,21 @@ namespace LibraryApp.View.Pages
         public LoginPage()
         {
             InitializeComponent();
-            
+
+            ViewModel = new AuthViewModel();
+
             this.WhenActivated(disposable =>
             {
                 this.Bind(this.ViewModel, user => user.Login, user => user.loginTextBox.Text)
                     .DisposeWith(disposable);
-                this.Bind(this.ViewModel, user => user.Password, user => user.passwordTextBox.Password)
+                this.Bind(this.ViewModel, user => user.Password, user => user.pasBox.Text)
                     .DisposeWith(disposable);
                 this.BindCommand(this.ViewModel, command => command.AuthCommand, command => command.authButton)
                     .DisposeWith(disposable);
                 this.BindCommand(this.ViewModel, command => command.OpenRegistration, command => command.registrButton)
+                    .DisposeWith(disposable);
+                this.BindCommand(this.ViewModel, command => command.OpenMainWindowByVisitor,
+                        command => command.visitorHyperlink)
                     .DisposeWith(disposable);
             });
         }

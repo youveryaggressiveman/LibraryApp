@@ -1,8 +1,9 @@
 ﻿<Page x:Class="LibraryApp.View.Pages.LoginPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:Control="clr-namespace:LibraryApp.Assets.Styles"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:local="clr-namespace:LibraryApp.View.Pages"
       mc:Ignorable="d"
       d:DesignHeight="600"
@@ -39,7 +40,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="100" />
             <RowDefinition Height="Auto" />
-            <RowDefinition/>
+            <RowDefinition />
         </Grid.RowDefinitions>
 
         <StackPanel HorizontalAlignment="Center"
@@ -50,6 +51,7 @@
                    Margin=" 0 0 10 0" />
             <TextBlock Text="Авторизация"
                        FontSize="30"
+                       FontWeight="Bold"
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center" />
         </StackPanel>
@@ -59,44 +61,14 @@
                 <RowDefinition />
                 <RowDefinition />
             </Grid.RowDefinitions>
-            <Border CornerRadius="10"
-                    Background="White"
-                    Margin="0 15 0 20"
-                    Height="70">
-                <Border.Effect>
-                    <DropShadowEffect BlurRadius="23"
-                                      ShadowDepth="5"
-                                      Direction="270"
-                                      Color="WhiteSmoke" />
-                </Border.Effect>
-                <Grid Margin="20 6">
-                    <TextBlock Name="titleTextBox"
-                               Text="Логин"
-                               Style="{StaticResource TxTtitleStyle}" />
-                    <TextBox Name="loginTextBox"
-                             Style="{StaticResource TxTStyle}" />
-                </Grid>
-            </Border>
-            <Border CornerRadius="10"
-                    Background="White"
-                    Margin="0 15 0 20"
-                    Height="70"
-                    Grid.Row="2">
-                <Border.Effect>
-                    <DropShadowEffect BlurRadius="23"
-                                      ShadowDepth="5"
-                                      Direction="270"
-                                      Color="WhiteSmoke" />
-                </Border.Effect>
-                <Grid Margin="20 6">
-                    <TextBlock Name="titlePasswordBox"
-                               Text="Пароль"
-                               Style="{StaticResource titlePasswordBoxStyle}" />
-                    <PasswordBox Name="passwordTextBox"
-                                 Style="{StaticResource PasswordBoxStyle}" />
+            <Control:CustomControll PlaceHolder="Логин"
+                                    x:Name="loginTextBox"/>
+            <Control:CustomControll Grid.Row="1"
+                                    PlaceHolder="Пароль" 
+                                    IsPassword="True"
+                                    x:Name="pasBox"/>
 
-                </Grid>
-            </Border>
+            
         </Grid>
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>
@@ -106,16 +78,17 @@
             </Grid.RowDefinitions>
             <Button Height="40"
                     Name="authButton"
-                    Content="Авторизоваться"/>
+                    Content="Авторизоваться" />
             <Button Grid.Row="1"
                     Name="registrButton"
-                    Content="Зарегистрироваться"/>
+                    Content="Зарегистрироваться" />
             <TextBlock Grid.Row="2"
                        HorizontalAlignment="Center"
                        VerticalAlignment="Center"
                        FontSize="20">
                 Войти как 
-                <Hyperlink>гость</Hyperlink>
+                <Hyperlink Name="visitorHyperlink"
+                           Cursor="Hand">гость</Hyperlink>
                 ?
             </TextBlock>
         </Grid>

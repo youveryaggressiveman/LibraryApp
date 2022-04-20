@@ -7,10 +7,28 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Assets\Styles\CustomControll.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Pages\AdminPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Pages\ClientPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Pages\EmployeePage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Pages\LoginPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\Pages\OrderListPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\Windows\AuthWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Windows\CreateNewOrderWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\Windows\RegistrationWindow.xaml.cs">
@@ -21,13 +39,31 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Assets\Styles\CustomControll.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Assets\Styles\GlobalStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Pages\AdminPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Pages\ClientPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Pages\EmployeePage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Pages\LoginPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\Pages\OrderListPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\Windows\AuthWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Windows\CreateNewOrderWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\Windows\MainWindow.xaml">

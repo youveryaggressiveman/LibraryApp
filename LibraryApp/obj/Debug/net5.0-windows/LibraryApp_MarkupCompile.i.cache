@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
 C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\App.xaml
-61028959102
+12-182717109
 
-36-756978831
+461283293297
 198-1282202342
-Assets\Styles\GlobalStyle.xaml;View\Pages\LoginPage.xaml;View\Windows\AuthWindow.xaml;View\Windows\MainWindow.xaml;View\Windows\RegistrationWindow.xaml;View\Windows\SelectRoleWindow.xaml;
+Assets\Styles\CustomControll.xaml;Assets\Styles\GlobalStyle.xaml;View\Pages\AdminPage.xaml;View\Pages\ClientPage.xaml;View\Pages\EmployeePage.xaml;View\Pages\LoginPage.xaml;View\Pages\OrderListPage.xaml;View\Windows\AuthWindow.xaml;View\Windows\CreateNewOrderWindow.xaml;View\Windows\MainWindow.xaml;View\Windows\RegistrationWindow.xaml;View\Windows\SelectRoleWindow.xaml;
 
 False
 

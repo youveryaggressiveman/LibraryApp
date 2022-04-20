@@ -56,8 +56,6 @@ namespace LibraryApp.ViewModel
                 .CreateFromObservable(ExecuteAdmin);
 
             SetAction(SetVisibility, userRoleList);
-
-            UserSingleton.User = null;
         }
 
         private IObservable<Unit> ExecuteAdmin()

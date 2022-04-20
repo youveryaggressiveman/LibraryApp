@@ -5,8 +5,96 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LibraryApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        WindowStartupLocation="CenterScreen"
+        Background="WhiteSmoke"
+        Title="Библиотека: Главное окно" Height="600" Width="1000"
+        MinHeight="600"
+        MinWidth="1000"
+        FontFamily="Rubik">
     <Grid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    Margin="15 0 0 0"
+                    Grid.ColumnSpan="2"
+                    Orientation="Horizontal">
+            <Image Source="../../Assets/Images/Logotype.png"
+                   Width="50"
+                   Margin=" 0 0 10 0" />
+            <TextBlock Text="Главное окно"
+                       FontSize="30"
+                       FontWeight="Bold"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center" />
+            </StackPanel>
+        <StackPanel Grid.Column="1"
+                    Name="userInfoStackPanel"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Right"
+                    Margin="15"
+                    
+                    >
+            <Border CornerRadius="8"
+                    Width="300"
+                    Height="85"
+                    Padding="5"
+                    BorderThickness="1"
+                    BorderBrush="#a3a3a4">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock
+                        Name="fullNameTextBlock"
+                        VerticalAlignment="Center"
+                        FontSize="21">
+                        <Run Text="ФИО:"
+                             FontWeight="SemiBold"/>
+                        <Run Text="{Binding FullName}"/>
+                    </TextBlock>
+                    <TextBlock VerticalAlignment="Center"
+                               Grid.Row="1"
+                               Name="roleTextBlock"
+                               FontSize="18">
+                        <Run Text="Роль:"
+                             FontWeight="SemiBold" />
+                        <Run Text="{Binding Role}" />
+                    </TextBlock>
+                </Grid>
+            </Border>
+        </StackPanel>
+        <Frame Grid.Row="1"
+               Grid.Column="1"
+               Name="mainFrame"
+               Margin="15">
+            <Frame.Style>
+                <Style TargetType="Frame">
+                    <Setter Property="BorderBrush"
+                            Value="#a3a3a4"/>
+                    <Setter Property="BorderThickness"
+                            Value="1"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Frame">
+                                <Border CornerRadius="8"
+                                        BorderThickness="{TemplateBinding BorderThickness}"
+                                        BorderBrush="{TemplateBinding BorderBrush}"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter/>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Frame.Style>
+        </Frame>
     </Grid>
 </Window>

@@ -20,6 +20,7 @@
                    Margin=" 0 0 10 0" />
             <TextBlock Text="Выбор роли"
                        FontSize="30"
+                       FontWeight="Bold"
                        HorizontalAlignment="Left"
                        VerticalAlignment="Center" />
         </StackPanel>

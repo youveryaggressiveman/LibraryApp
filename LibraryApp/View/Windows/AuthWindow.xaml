@@ -9,7 +9,6 @@
         WindowStartupLocation="CenterScreen"
         Foreground="#292929"
         Background="WhiteSmoke"
-        Name="_this"
         Title="Библиотека: Авторизация" Height="600" Width="500"
         FontFamily="Rubik">
     <Grid>

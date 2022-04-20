@@ -29,8 +29,8 @@ namespace LibraryApp.View.Windows
         {
             InitializeComponent();
 
-            FrameMangaer.MainFrame = loginFrame;
-            FrameMangaer.SetSource(new LoginPage());
+            FrameManager.MainFrame = loginFrame;
+            FrameManager.SetSource(new LoginPage());
         }
     }
 }

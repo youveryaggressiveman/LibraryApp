@@ -43,6 +43,7 @@ namespace LibraryApp.ViewModel
             set => this.RaiseAndSetIfChanged(ref _password, value, nameof(Password));
         }
 
+        public ReactiveCommand<Unit, Unit> OpenMainWindowByVisitor { get; }
         public ReactiveCommand<Unit, Unit> OpenRegistration { get; }
         public ReactiveCommand<Unit, Unit> AuthCommand { get; }
 
@@ -51,24 +52,31 @@ namespace LibraryApp.ViewModel
             _authHelper = new AuthHelper();
             _controller = new AuthController();
 
+            OpenMainWindowByVisitor = ReactiveCommand
+                .CreateFromObservable(ExecuteVisitor);
             OpenRegistration = ReactiveCommand
-                .CreateFromObservable(ExecuteOpenWindow);
+                .CreateFromObservable(ExecuteRegistration);
             AuthCommand = ReactiveCommand
                 .CreateFromObservable(ExecuteAuth);
         }
 
-        private IObservable<Unit> ExecuteOpenWindow()
+        private IObservable<Unit> ExecuteVisitor()
         {
-            RegistrationWindow registrationWindow = new RegistrationWindow();
-            registrationWindow.Show();
+            RouteEvent(new List<LoadAll>() { LoadVisitorWindow });
 
-            foreach (Window window in Application.Current.Windows)
-            {
-                if (window is AuthWindow)
-                {
-                    window.Close();
-                }
-            }
+            return Observable.Return(Unit.Default);
+        }
+
+        private IObservable<Unit> ExecuteRegistration()
+        {
+            RouteEvent(new List<LoadAll>(){LoadRegistrWindow});
+
+            return Observable.Return(Unit.Default);
+        }
+
+        private IObservable<Unit> ExecuteAuth()
+        {
+            RouteEvent(new List<LoadAll>() { CheckInfo });
 
             return Observable.Return(Unit.Default);
         }
@@ -83,11 +91,32 @@ namespace LibraryApp.ViewModel
             }
         }
 
-        private IObservable<Unit> ExecuteAuth()
+        private void LoadVisitorWindow()
         {
-            RouteEvent(new List<LoadAll>(){CheckInfo});
+            MainWindow mainWindow = new MainWindow(null);
+            mainWindow.Show();
 
-            return Observable.Return(Unit.Default);
+            foreach (Window window in App.Current.Windows)
+            {
+                if (window is AuthWindow)
+                {
+                    window.Close();
+                }
+            }
+        }
+
+        private void LoadRegistrWindow()
+        {
+            RegistrationWindow registrationWindow = new RegistrationWindow();
+            registrationWindow.Show();
+
+            foreach (Window window in Application.Current.Windows)
+            {
+                if (window is AuthWindow)
+                {
+                    window.Close();
+                }
+            }
         }
 
         private async void CheckInfo()
@@ -105,12 +134,10 @@ namespace LibraryApp.ViewModel
                         try
                         {
                             if (await  _controller.Authorize(new AuthorizeUser()
-                                    { Login = "admin", Password = "admin", RoleID = 1 }))
+                                    { Login = Login, Password = Password, RoleID = UserSingleton.User.RoleOfUsers.ToList()[0].RoleId }))
                             {
                                 MainWindow mainWindow = new MainWindow(user.RoleOfUsers.First(x=>x.UserId == UserSingleton.User.Id).Role.Value);
                                 mainWindow.Show();
-
-                                UserSingleton.User = null;
 
                                 foreach (Window window in Application.Current.Windows)
                                 {

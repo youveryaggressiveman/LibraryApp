@@ -70,3 +70,16 @@ C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\Librar
 C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\obj\Debug\net5.0-windows\View\Pages\LoginPage.baml
 C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\obj\Debug\net5.0-windows\View\Windows\RegistrationWindow.g.cs
 C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\obj\Debug\net5.0-windows\View\Windows\RegistrationWindow.baml
+C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\obj\Debug\net5.0-windows\Assets\Styles\CustomControll.g.cs
+C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\obj\Debug\net5.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\obj\Debug\net5.0-windows\View\Pages\EmployeePage.g.cs
+C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\obj\Debug\net5.0-windows\Assets\Styles\CustomControll.baml
+C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\obj\Debug\net5.0-windows\View\Pages\EmployeePage.baml
+C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\obj\Debug\net5.0-windows\View\Pages\AdminPage.g.cs
+C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\obj\Debug\net5.0-windows\View\Pages\ClientPage.g.cs
+C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\obj\Debug\net5.0-windows\View\Pages\ClientPage.baml
+C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\obj\Debug\net5.0-windows\View\Pages\AdminPage.baml
+C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\obj\Debug\net5.0-windows\View\Pages\OrderListPage.g.cs
+C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\obj\Debug\net5.0-windows\View\Pages\OrderListPage.baml
+C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\obj\Debug\net5.0-windows\View\Windows\CreateNewOrderWindow.g.cs
+C:\Users\повелитель\Desktop\GG PROGRAMIST\LibraryAll\LibraryApp\LibraryApp\obj\Debug\net5.0-windows\View\Windows\CreateNewOrderWindow.baml

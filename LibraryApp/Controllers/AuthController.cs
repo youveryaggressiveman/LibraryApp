@@ -30,7 +30,6 @@ namespace LibraryApp.Controllers
                                                                         "&password=" + authorizeUser.Password +
                                                                         "&roleID=" + authorizeUser.RoleID);
             request.Method = "POST";
-            //request.Headers["Authorization"] = $"Bearer {TokenSingleton.Token}";
             request.Accept = "application/json";
             request.ContentType = "application/json";
 
@@ -60,7 +59,9 @@ namespace LibraryApp.Controllers
         {
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(_serverLink + "/GetUserByLoginAndPassword?login=" + user.Login +
                                                                        "&password=" + user.Password);
+            request.Method = "GET";
             request.Accept = "application/json";
+            request.ContentType = "application/json";
 
             var httpResponse = (HttpWebResponse)request.GetResponse();
             using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))

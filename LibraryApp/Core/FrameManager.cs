@@ -7,7 +7,7 @@ using System.Windows.Controls;
 
 namespace LibraryApp.Core
 {
-    public static class FrameMangaer
+    public static class FrameManager
     {
         public static Frame MainFrame { get; set; }
 

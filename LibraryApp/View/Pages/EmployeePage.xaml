@@ -1,0 +1,67 @@
+﻿<Page x:Class="LibraryApp.View.Pages.EmployeePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:LibraryApp.View.Pages"
+      mc:Ignorable="d" 
+      Style="{StaticResource pageStyle}"
+      d:DesignHeight="550" d:DesignWidth="850"
+      Title="EmployeePage">
+    <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                  VerticalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100"/>
+                <RowDefinition />
+                <RowDefinition Height="100" />
+            </Grid.RowDefinitions>
+            <TextBlock Text="Режим сотрудника: Список клиентов"
+                       FontSize="25"
+                       FontWeight="SemiBold"
+                       HorizontalAlignment="Left"
+                       VerticalAlignment="Center"
+                       Margin="15 0 0 0"/>
+            <TextBox HorizontalAlignment="Right"
+                    Text="поле для поиска пользователя по телефону (Сделать позже)"
+                    TextWrapping="Wrap"
+                    Margin="15"
+                    Width="200"></TextBox>
+            <DataGrid RowStyle="{DynamicResource DataGridRowStyle}"
+                      ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle}"
+                      Style="{DynamicResource DataGridStyle}"
+                      x:Name="dataGrid"
+                      Grid.Row="1"
+                      IsReadOnly="True"
+                      AutoGenerateColumns="False"
+                      Margin="15">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="*"
+                                        Header="Фамилия"
+                                        MinWidth="150"
+                                        Binding="{Binding User.SecondName}" />
+                    <DataGridTextColumn Width="*"
+                                        Header="Имя"
+                                        MinWidth="150"
+                                        Binding="{Binding User.FirstName}" />
+                    <DataGridTextColumn Width="*"
+                                        Header="Отчество"
+                                        Binding="{Binding User.LastName}"
+                                        MinWidth="150" />
+                    <DataGridTextColumn Width="*"
+                                        Header="Телефон"
+                                        Binding="{Binding User.Phone}"
+                                        MinWidth="120" />
+                    <DataGridTextColumn Width="*"
+                                        Header="Почта"
+                                        Binding="{Binding User.Email}"
+                                        MinWidth="120" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Grid.Row="2"
+                    Content="Просмотреть историю заказов у пользователя"
+                    Width="500"/>
+        </Grid>
+    </ScrollViewer>
+   
+</Page>

@@ -5,18 +5,22 @@ using System.Reactive.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
 using LibraryApp.Controllers;
 using LibraryApp.Core;
+using LibraryApp.Core.Singleton;
 using LibraryApp.Model;
+using LibraryApp.View.Pages;
 using ReactiveUI;
 
 namespace LibraryApp.ViewModel
 {
     public class MainViewModel : ReactiveObject
     {
-        private readonly MainViewModelController _controller;
-
         private readonly ObservableAsPropertyHelper<string> _fullName;
+
+        private Visibility _visibilityUserInfo = Visibility.Visible;
         private string _roleName;
 
         public string FullName => _fullName.Value;
@@ -25,6 +29,12 @@ namespace LibraryApp.ViewModel
         public event LoadAllInfo Load;
 
         public User ThisUser { get; set; }
+
+        public Visibility VisibilityUserInfo
+        {
+            get => _visibilityUserInfo;
+            set => this.RaiseAndSetIfChanged(ref _visibilityUserInfo, value, nameof(VisibilityUserInfo));
+        }
 
         public string RoleName
         {
@@ -37,16 +47,20 @@ namespace LibraryApp.ViewModel
 
         public MainViewModel(string roleName)
         {
-            _controller = new MainViewModelController();
-
-            RoleName = roleName;
-
-            RouteEvent(new List<LoadAllInfo>(){LoadUser});
-
-            _fullName = this
-                .WhenAnyValue(x => x.ThisUser.SecondName + " " + x.ThisUser.FirstName + "."
-                                   + (x.ThisUser.LastName != null ? x.ThisUser.LastName[0] + "." : ""))
-                .Select(name => name.ToString())
+            if (roleName == null && UserSingleton.User == null)
+            {
+                VisibilityUserInfo = Visibility.Collapsed;
+            }
+            else
+            {
+                RoleName = roleName;
+                ThisUser = UserSingleton.User;
+                
+            }
+            _fullName = this.WhenAnyValue(x => x.ThisUser)
+                .Select(name => (name?.FirstName != null ? name.FirstName + " " : "")
+                                + (name?.SecondName != null ? name.SecondName[0] + "." : "")
+                                + (name?.LastName != null ? name.LastName[0] + "." : ""))
                 .ToProperty(this, nameof(FullName));
         }
 
@@ -60,9 +74,19 @@ namespace LibraryApp.ViewModel
             }
         }
 
-        private async void LoadUser()
+        public Page LoadFrame()
         {
-            ThisUser = await _controller.GetUser();
+            if (RoleName == "Клиент" || RoleName == null)
+            {
+                return new ClientPage();
+            }
+
+            if (RoleName == "Сотрудник")
+            {
+                return new EmployeePage();
+            }
+
+            return new AdminPage();
         }
     }
 }
